@@ -5,10 +5,12 @@ const bodyparser = require("body-parser"); // It will convert any request from f
 const cors = require("cors");
 
 const app = express();
+const userRoute = require("./routes/userRoutes");
 
 app.use(express.json());
 app.use(bodyparser.json());
 app.use(express.urlencoded({ extended: false }));
+app.use("/api/users", userRoute);
 
 const PORT = process.env.PORT || 5000;
 // Setting up the routes

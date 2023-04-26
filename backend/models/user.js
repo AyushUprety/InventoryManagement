@@ -23,14 +23,16 @@ var UserSchema = new mongoose.Schema(
       minlength: 5,
       maxlength: 15,
     },
+    phone: {
+      type: String,
+      default: "+977",
+    },
     image: {
       data: Buffer,
       contentType: String,
     },
-    hash: String,
-    salt: String,
   },
-  { tiemstamps: true }
+  { tiemstamps: true } // THis will set created at and updated at automatically
 );
 
 const User = mongoose.model("User", UserSchema);
