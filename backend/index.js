@@ -6,6 +6,10 @@ const cors = require("cors");
 
 const app = express();
 
+app.use(express.json());
+app.use(bodyparser.json());
+app.use(express.urlencoded({ extended: false }));
+
 const PORT = process.env.PORT || 5000;
 // Setting up the routes
 // Home route
