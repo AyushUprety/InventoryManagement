@@ -8,7 +8,7 @@ const userRoute = require("./routes/userRoute");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/api/user", userRoute);
+app.use("/api/user", userRoute); // This means first the route will be /api/user and then userRoute ma vako route will be enabled
 const PORT = process.env.PORT || 5000;
 // Setting up the routes
 // Home route
