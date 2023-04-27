@@ -3,21 +3,19 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyparser = require("body-parser"); // It will convert any request from front end to object
 const cors = require("cors");
-
 const app = express();
-const userRoute = require("./routes/userRoutes");
+const userRoute = require("./routes/userRoute");
 
 app.use(express.json());
-app.use(bodyparser.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/api/users", userRoute);
-
+app.use("/api/user", userRoute);
 const PORT = process.env.PORT || 5000;
 // Setting up the routes
 // Home route
 app.get("/", (req, res) => {
   res.send("Hi there");
 });
+
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
